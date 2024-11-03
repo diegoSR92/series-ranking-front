@@ -1,0 +1,14 @@
+<div>
+  <form [formGroup]="serieForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="nombre" placeholder="Nombre de la serie">
+    <input type="text" formControlName="plataforma" placeholder="Plataforma">
+    <textarea formControlName="sinopsis" placeholder="Sinopsis"></textarea>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button type="submit">Agregar Serie</button>
+</form>
+</div>
+
+<!-- Popup de confirmación -->
+<div *ngIf="showPopup" class="popup">
+  ¡Serie agregada exitosamente!
+</div>

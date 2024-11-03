@@ -1,0 +1,12 @@
+<div>
+  <h2>VALORACIONES</h2>
+<hr/>
+  <div *ngFor="let serie of seriesList">
+    <h3>{{ serie.nombre }} ({{ serie.plataforma }})</h3>
+    <ul>
+      <li *ngFor="let valoracion of serie.valoraciones" style="list-style: none;">
+        {{ valoracion.autor }} --> {{ valoracion.valoracion }}
+      </li>
+    </ul>
+  </div>
+</div>

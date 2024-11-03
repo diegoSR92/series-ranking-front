@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Plataforma</th>
+      <th>Sinopsis</th>
+      <th>Valoración Media</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let serie of topSeries">
+      <td>{{ serie.id }}</td>
+      <td><img *ngIf="serie.caratula" [src]="serie.caratula" alt="Imagen serie" width="100" /></td>
+      <td>{{ serie.nombre }}</td>
+      <td>{{ serie.plataforma }}</td>
+      <td>{{ serie.sinopsis }}</td>
+      <td>{{ serie.valoracionMedia | number:'1.1-1' }}</td>
+    </tr>
+  </tbody>
+</table>

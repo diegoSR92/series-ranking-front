@@ -1,0 +1,21 @@
+<!-- new-valoracion.component.html -->
+<div>
+  <h2>Nueva Valoración</h2>
+  <form (ngSubmit)="addValoracion()">
+    <label>Serie:</label>
+    <select [(ngModel)]="newValoracion.serieId" name="serieId">
+      <option *ngFor="let serie of seriesList" [value]="serie.id">
+        {{ serie.nombre }}
+      </option>
+    </select>
+
+    <label>Usuario:</label>
+    <input [(ngModel)]="newValoracion.usuario" name="usuario" required />
+
+    <label>Valoración:</label>
+    <input type="number" [(ngModel)]="newValoracion.valoracion" name="valoracion" min="0" max="10" required />
+
+    <button type="submit">Guardar</button>
+  </form>
+</div>
+
